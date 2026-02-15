@@ -1,65 +1,103 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+import {
+  FaInstagram,
+  FaWhatsapp,
+  FaFacebookF,
+  FaSnapchatGhost,
+  FaPhone,
+} from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0f0f1a] via-[#1a1a2e] to-[#2b0f2f] px-6 relative overflow-hidden">
+
+      {/* Soft Glow Background */}
+      <div className="absolute w-[500px] h-[500px] bg-rose-600/30 blur-[180px] rounded-full top-[-150px] left-[-150px]" />
+      <div className="absolute w-[400px] h-[400px] bg-violet-600/30 blur-[180px] rounded-full bottom-[-150px] right-[-150px]" />
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative z-10 w-full max-w-2xl bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl p-10 text-center"
+      >
+        {/* Profile Image */}
+        <div className="flex justify-center">
+          <img
+            src="/profile.jpg"
+            alt="Dominator"
+            className="w-36 h-36 rounded-full object-cover border-4 border-rose-500 shadow-lg"
+          />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Name */}
+        <h1 className="mt-6 text-5xl font-extrabold bg-gradient-to-r from-rose-400 to-violet-400 bg-clip-text text-transparent tracking-wide">
+          Dominator
+        </h1>
+
+        {/* Status */}
+        <div className="mt-4 inline-flex items-center gap-2 px-6 py-2 rounded-full bg-rose-500/20 border border-rose-400 text-rose-300 font-semibold text-sm uppercase tracking-wider">
+          ❤️ Single
         </div>
-      </main>
-    </div>
+
+        {/* Description */}
+        <p className="mt-6 text-gray-300 leading-relaxed">
+          Welcome to my personal profile page.  
+          This page is for genuine connections, conversations, and meeting someone special.
+          Confidence. Loyalty. Real vibes only.
+        </p>
+
+        {/* Social Buttons */}
+        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4">
+
+          <a
+            href="https://instagram.com/abhayvrma01"
+            target="_blank"
+            className="flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 text-white font-medium hover:scale-105 transition"
+          >
+            <FaInstagram /> Instagram
+          </a>
+
+          <a
+            href="https://wa.me/919919682082"
+            target="_blank"
+            className="flex items-center justify-center gap-2 py-3 rounded-xl bg-green-500 text-white font-medium hover:scale-105 transition"
+          >
+            <FaWhatsapp /> WhatsApp
+          </a>
+
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            className="flex items-center justify-center gap-2 py-3 rounded-xl bg-blue-600 text-white font-medium hover:scale-105 transition"
+          >
+            <FaFacebookF /> Facebook
+          </a>
+
+          <a
+            href="https://snapchat.com/add/abhayvrma001"
+            target="_blank"
+            className="flex items-center justify-center gap-2 py-3 rounded-xl bg-yellow-400 text-black font-medium hover:scale-105 transition"
+          >
+            <FaSnapchatGhost /> Snapchat
+          </a>
+
+          <a
+            href="tel:9919682082"
+            className="col-span-2 sm:col-span-3 flex items-center justify-center gap-2 py-3 rounded-xl bg-violet-600 text-white font-medium hover:scale-105 transition"
+          >
+            <FaPhone /> Call 9919682082
+          </a>
+
+        </div>
+
+        {/* Footer */}
+        <div className="mt-10 text-gray-400 text-sm">
+          © {new Date().getFullYear()} Dominator. All rights reserved.
+        </div>
+      </motion.div>
+    </main>
   );
 }
